@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pixel Builder Pro</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>🏗️ PIXEL TASK MANAGER</h1>
+      <div class="stats-container">
+        <div class="score-board">
+          <div class="score">Tasks: <span id="taskCounter">0</span></div>
+          <div class="streak">Streak: <span id="streakCounter">0</span>🔥</div>
+          <div class="level">Level: <span id="levelCounter">1</span>⭐</div>
+        </div>
+        <div class="xp-bar-container">
+          <div class="xp-bar" id="xpBar"></div>
+          <div class="xp-text" id="xpText">0/100 XP</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="input-group">
+        <input type="text" id="taskInput" placeholder="ENTER CONSTRUCTION BLUEPRINT..." />
+        <div class="button-group">
+          <button id="addButton" class="pixel-button">
+            <span class="icon">⚡</span> BUILD (A)
+          </button>
+          <button id="clearButton" class="pixel-button danger">
+            <span class="icon"><i class="fas fa-trash"></i></span> CLEAR
+          </button>
+        </div>
+      </div>
+      <div class="category-selector">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="work">Work</button>
+        <button class="category-btn" data-category="personal">Personal</button>
+        <button class="category-btn" data-category="health">Health</button>
+        <button class="category-btn" data-category="learning">Learning</button>
+      </div>
+    </div>
+
+    <div class="scene">
+      <div class="character" id="character">
+        <div class="helmet">
+          <div class="visor"></div>
+          <div class="head">
+            <div class="eyes"></div>
+            <div class="mouth"></div>
+          </div>
+        </div>
+        <div class="body">
+          <div class="belt"></div>
+          <div class="tool">
+            <div class="hammer-head"></div>
+            <div class="hammer-handle"></div>
+          </div>
+        </div>
+        <div class="legs">
+          <div class="leg left"></div>
+          <div class="leg right"></div>
+        </div>
+        <div class="sparkles"></div>
+      </div>
+      
+      <div class="environment">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="ground"></div>
+      </div>
+      
+      <div class="task-wall" id="taskWall"></div>
+    </div>
+    
+    <div class="completion-effects"></div>
+    
+    <div class="achievement-toast" id="achievementToast"></div>
+    
+    <audio id="buildSound" src="/sounds/build.wav" preload="auto"></audio>
+    <audio id="completeSound" src="/sounds/complete.wav" preload="auto"></audio>
+    <audio id="streakSound" src="/sounds/streak.wav" preload="auto"></audio>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
